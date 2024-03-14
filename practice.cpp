@@ -1,0 +1,61 @@
+#include <bits/stdc++.h>
+using namespace std;
+#define ll long long
+#define endl "\n"
+#define optimize()                \
+    ios_base::sync_with_stdio(0); \
+    cin.tie(0);                   \
+    cout.tie(0);
+#define fl(n) for (int i = 2; i <= n; i++)
+#define rfl(n) for (int i = n - 1; i >= 0; i--)
+#define flj(n) for (int j = 0; j < n; j++)
+#define esort(vec) sort(vec.begin(), vec.end());
+#define be(s) (s).begin(), (s).end()
+#define ap(vec) for_each(vec.begin(), vec.end(), print)
+void print(int i) { cout << i << ' '; }
+#define pb(x) push_back(x)
+#define pll pair<ll, ll>
+#define lb lower_bound
+#define ub upper_bound
+#define yes cout << "YES\n"
+#define no cout << "NO\n"
+
+void solve()
+{
+    int t = 1;
+    while (t--)
+    {
+        ll x = 0, y = 0, z = 0, a, b, c, ans = 0, count = 0;
+        vector<string> vec;
+        vec.push_back("0");
+        vec.push_back("1");
+        cin >> a;
+        fl(a)
+        {
+            x = vec.size();
+            rfl(x)
+            {
+                vec.push_back(vec[i]);
+            }
+
+            flj(x)
+            {
+                vec[j] += "0";
+                vec[j + x] += "1";
+            }
+        }
+
+        for (auto x : vec)
+        {
+            reverse(be(x));
+            cout << x << endl;
+        }
+    }
+}
+
+int main()
+{
+    optimize();
+    solve();
+    return 0;
+}
