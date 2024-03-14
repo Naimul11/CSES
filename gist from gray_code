@@ -1,0 +1,31 @@
+gray code means the difference between two number can be atmost 1.
+
+if n=2 
+00
+01
+11
+10
+
+first we can calculate n=1 
+
+0
+1 
+
+then add reverse of it and then add 0 to first half and 1 to last half.
+
+0
+1
+1
+0
+
+00
+10
+11
+01
+
+when we print the value we have to reverse the string.
+
+00
+01
+11
+10
